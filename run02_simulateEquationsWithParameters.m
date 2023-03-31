@@ -1,4 +1,10 @@
 
+%{
+
+# Simulate explanatory equations with calibrated parameters
+
+%}
+
 
 close all
 clear
@@ -6,7 +12,7 @@ mkdir mat
 
 rng(0);
 
-q = Explanatory.fromFile("example.model");
+q = Explanatory.fromFile("example02-with-parameters.model");
 
 collectLhsNames(q)
 
@@ -39,6 +45,6 @@ d.res_z = Series(startDate:endDate, @randn)*0.05;
 
 d = simulate(q, d, startDate:endDate);
 
-save mat/simulateEquations.mat q d startDate endDate
+save mat/simulateEquationsWithParameters.mat q d startDate endDate
 
 

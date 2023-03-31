@@ -9,7 +9,7 @@
 close all
 clear
 
-load mat/simulateEquations.mat q d startDate endDate
+load mat/simulateEquationsWithParameters.mat q d startDate endDate
 
 
 %{

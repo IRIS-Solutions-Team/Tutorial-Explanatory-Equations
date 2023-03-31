@@ -1,0 +1,32 @@
+
+%{
+
+# Explanatory equations
+
+* No declaration of variables, parameters, shocks, etc
+* Only a single name, or one of the following transformations on the LHS: log, exp, diff, difflog, roc, pct
+* Any expression on the RHS - the input values for the RHS terms can be either time series or scalar values
+
+%}
+
+
+!equations(:elephant :blackbird)
+
+    % Equation with an additive residual res_x (created and added automatically)
+    :rattlesnake
+    x = alpha + beta*x{-1} + gamma*a{-2};
+
+    % Equation with an additive residual res_y? (created and added automatically)
+    !for ? = 1, 2, 3 !do
+        :zebra
+        difflog(y?) = delta? + phi?*difflog(y?{-1}) + sqrt(abs(omega?+sigma?))*b{-1} + omega?*c;
+    !end
+
+!equations(:snail)
+
+    % Equation with an additive residual res_z (created and added automatically)
+    z = log( d^0.5 * e{-1}^(1-0.5) );
+
+    % Identity with no residual
+    w === x + !for 1, 2, 3 !do + y? !end + z;
+
